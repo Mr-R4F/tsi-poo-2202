@@ -8,5 +8,10 @@
     justify-content: center;
 }
 
+fieldset {
+    padding: 10px;
+}
 
-
+legend {
+    text-align: center;
+}
