@@ -1,11 +1,17 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: content-box;
+}
+
+body {
+    zoom: 125%;
 }
 
 .container {
     display: flex;
     justify-content: center;
+    margin-top: 5%;
 }
 
 fieldset {
