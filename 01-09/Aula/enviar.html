@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form action="enviar.php" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Envio de Formulário usando o PHP</legend>
+
+                <label for="para">Para</label>
+                <input type="text" name="destinatario" id="para" size="50">
+
+                <label for="asst">Assunto</label>
+                <input type="text" name="assunto" id="asst" size="50">
+
+                <label for="asst">Conteudo</label>
+                <textarea name="conteudo" id="" cols="50" rows="5"></textarea>
+
+                <button type="submit" name="enviar">Enviar</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
