@@ -10,4 +10,3 @@ if (isset($_POST['calcula'])) {
 if (isset($_POST['limpa'])) {
     $imc->setImc('', '');
 }
-
