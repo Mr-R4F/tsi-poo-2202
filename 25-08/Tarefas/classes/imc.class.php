@@ -4,16 +4,17 @@ class Imc {
     public $peso;
     public $altura;
     public $valImc;
+    public $img;
 
     function setImc($peso, $altura) {
         if ($peso == '' && $altura == '' || $peso == '' || $altura == '' || $peso == 0  && $altura == 0 || $peso == 0 || $altura == 0) {
             $this->peso = $this->altura = 0;
         } else {
             $this->peso = $peso;
-            if (strpos($altura, '.') == true)
+            if (strpos($altura, '.') == true || $altura < 100)
                 $this->altura = $altura;
-            else  
-                $this->altura = $altura / 100; //converte de CM para M.
+            else
+                $this->altura = $altura / 100; //Converte de CM para M.
         }
     }
 
@@ -30,6 +31,7 @@ class Imc {
         if ($valImc != 0) {
             switch ($valImc >= 0) {
                 case $valImc >= 40.00:
+                    $this->img = '<img src="assets/triste.jpg" alt="" width="114">';
                     return 'OBESIDADE GRAVE';
                     break;
             

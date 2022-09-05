@@ -15,46 +15,85 @@
         <div class="container">
             <form action="#" method="post">
                 <fieldset>
-                    <legend>IMC</legend>
+                    <legend>Calculadora de IMC</legend>
                     <div class="form-control">
-                        <div class="row one">
-                            <label for="ps">Peso</label>
-                            <input type="number" name="peso" id="ps">
+                        <div class="col one">
+                            <div class="form-item">
+                                <div class="item">
+                                    <label for="ps">Peso</label>
+                                    <input type="number" name="peso" id="ps" value="<?php echo isset($_POST['calcula']) ? $imc->peso : ""; ?>">
+                                </div>
+                            </div>
+                            <div class="icon">
+                                <?php 
+                                    switch ($imc->getImc() != 0) {
+                                        case $imc->getImc() >= 40 || $imc->getImc() <= 39.99 && $imc->getImc() >= 30.00 || $imc->getImc() <= 29.99 && $imc->getImc() >= 25.00:
+                                            echo '<img src="assets/triste.jpg" alt="" width="114">';
+                                            break;
+                                        
+                                        case $imc->getImc() <= 24.99 && $imc->getImc() >= 18.50:
+                                            echo '<img src="assets/feliz.jpg" alt="" width="114">';
+                                            break;
 
-                            <label for="altr">Altura</label>
-                            <input type="text" name="altura" id="altr">
+                                        case $imc->getImc() < 18.50:
+                                            echo '<img src="assets/feliz.jpg" alt="" width="114">';
+                                            break;
 
-                            <label for="imc">IMC</label>
-                            <input type="number" id="imc" value="<?php echo isset($_POST['calcula']) ? $imc->getImc() : ""; ?>" disabled>
+                                        default:
+                                            break;
+                                    }
+                                ?>
+                            </div>
+                        </div>
+                        
+                        <div class="col two">
+                            <div class="form-item">
+                                <div class="item">
+                                    <label for="altr">Altura</label>
+                                    <input type="text" name="altura" id="altr" value="<?php echo isset($_POST['calcula']) ? $imc->altura : ""; ?>">
+                                </div>
+                                <div class="item">
+                                    <label for="imc">IMC</label>
+                                    <input type="number" id="imc" value="<?php echo isset($_POST['calcula']) ? $imc->getImc() : ""; ?>" disabled>
+                                </div>
+                            </div>
 
-                            <button type="submit" id="btnCalcular" name="calcula">Calcular</button>
+                            <div class="status" style="background-color: red;">
+                                <p>Status da situação:  </p>
+                                <span id="resultado"><?php echo isset($_POST['calcula']) ? $imc->getStatus() : ""; ?></span>
+                            </div>
                         </div>
 
-                        <div class="row two">
-                            <input type="text" value="" disabled>
-                            <input type="text" value="" disabled>
-                            <input type="text" value="" disabled>
+                        <div class="col three">
+                            <div class="form-btn">
+                                <button type="submit" id="btnCalcular" name="calcula">Calcular</button>
+                                <button type="submit" id="btnLimpar" name="limpa">Limpar</button>
+                            </div>
 
-                            <button type="submit" id="btnLimpar" name="limpa">Limpar</button>
-                        </div>
+                            <div class="icon">
+                                <?php 
+                                    switch ($imc->getImc() != 0) {
+                                        case $imc->getImc() >= 40 || $imc->getImc() <= 39.99 && $imc->getImc() >= 30.00 || $imc->getImc() <= 29.99 && $imc->getImc() >= 25.00:
+                                            echo '<img src="assets/triste.jpg" alt="" width="114">';
+                                            break;
+                                        
+                                        case $imc->getImc() <= 24.99 && $imc->getImc() >= 18.50:
+                                            echo '<img src="assets/feliz.jpg" alt="" width="114">';
+                                            break;
 
-                        <div class="row three">
-                           <div class="icon">
+                                        case $imc->getImc() < 18.50:
+                                            echo '<img src="assets/triste.jpg" alt="" width="114">';
+                                            break;
 
-                           </div>
-                           <div class="status">
-
-                           </div>
-                           <div class="icon">
-
-                           </div> 
-                        </div>
+                                        default:
+                                            break;
+                                    }
+                                ?>
+                            </div> 
+                        </div>   
                     </div>
                 </fieldset>
             </form>
-            <div class="status">
-                <p>Status da situação: <span id="resultado"><?php echo isset($_POST['calcula']) ? $imc->getStatus() : ""; ?></span></p>
-            </div>
         </div>
     </body>
 </html>

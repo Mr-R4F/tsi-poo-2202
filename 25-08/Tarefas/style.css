@@ -4,4 +4,75 @@
     box-sizing: border-box;
 }
 
+body {
+    zoom: 175%;
+}
 
+.form-control, .form-btn, .form-item, .item, span {
+    display: flex;
+}
+
+.container {
+    background-color: rgb(202, 202, 202);
+    width: fit-content;
+}
+
+.container, label, .status {
+    border: 2px solid #000;
+}
+
+fieldset {
+    border: none;
+}
+
+legend, p, .icon, label, input {
+    text-align: center;
+}
+
+.form-control, span {
+    justify-content: center;
+}
+
+.container {
+    margin: 5% auto 0;
+}
+
+.col {
+    padding: 10px;
+}
+
+.form-btn, .item {
+    flex-direction: column;
+}
+
+input, button, label {
+    padding: 5px;
+}
+
+.status {
+    height: 50px;
+}
+
+.status, span {
+    margin-top: 3%;  
+}
+
+.one .icon {
+    margin-top: 5%;
+}
+
+.two .item:last-child {
+    padding-left: 20px;
+}
+
+input {
+    margin-top: 5%;
+}
+
+#btnLimpar {
+    margin-top: 10%;
+}
+
+.three .icon {
+    margin-top: 15%;
+}
