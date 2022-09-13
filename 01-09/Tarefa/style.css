@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
+
+:root {
+    --transparent: transparent; /* Float */
+}
+
+body {
+    background: #485563;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-attachment: fixed;    
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container, fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    margin-top: 10%;
+}
+
+form {
+    padding: 15px;
+}
+
+/* FORM */
+fieldset {
+    width: 450px;
+    border: 0;
+}
+
+legend {
+    text-align: center;
+    font-size: 3em;
+}
+
+button[type=submit] {
+    margin-top: 8%;
+    margin-bottom: 5%;
+    height: 40px;
+    cursor: pointer;
+    font-size: large;
+}
+
+input, legend, p, a {
+    color: #fff;
+}
+
+.float:nth-child(2), .float:nth-child(3) {
+    margin-top: 10%;
+}
+
+.float, input, button[type=submit] {
+    width: 100%;
+}
+
+/* FLOAT */
+.float {
+    position: relative;
+    padding-top: 5px;
+}
+  
+.float input {
+    font-size: larger;
+    background-color: var(--transparent);
+    height: 35px;
+    outline: none;
+    border: 0px var(--transparent);
+    border-bottom: 1px solid #fff;
+    transition: all .2s ease-out;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    margin-top: 5%;
+}
+
+.float input::placeholder {
+    color: var(--transparent);
+}
+
+.float label {
+    pointer-events: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-top: 30px;
+    font-size: x-large;
+    transition: all .2s ease-out;
+    -webkit-transition: all .1s ease-out;
+    -moz-transition: all .1s ease-out;
+    transform: scale(1);
+    color: rgba(234, 234, 234, 0.789);
+}
+
+.float input:focus + label, 
+.float input:not(:placeholder-shown) + label {
+    font-size: x-large;
+    left: -11px;
+    transform: scale(.8);
+    margin-top: 5px;
+    color: rgba(234, 234, 234, 0.789);
+}
+
+.float input::-webkit-inner-spin-button, 
+.float input::-webkit-outer-spin-button {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+a {
+    text-decoration: none;
+}

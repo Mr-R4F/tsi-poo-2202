@@ -1,30 +1,30 @@
 <?php
 
 class Registro { 
-    private $idCli;
-    private $login;
-    private $email;
-    private $tel;
-    private $validade;
-    private $codAcesso;
-    private $tipo;
+    public $idCli;
+    public $login;
+    public $email;
+    public $tel;
+    public $validado;
+    public $codAcesso;
+    public $tipo;
 
-    private function setUsuario($login, $email, $tel, $tipo) {
+    public function setUsuario($login, $email, $tel, $tipo) {
         $this->login = $login;
         $this->email = $email;
         $this->tel = $tel;
         $this->tipo = $tipo;
     }
 
-    private function setRegistrar() {
-
+    public function setRegistrar() { //enviar o código para o banco e manda o cód para o email
+       
     }
 
-    private function setValidar() {
-        
+    public function setValidar($val) {
+        $this->validado = $val;
     }
 
-    private function setLogin () {
+    public function setLogin ($login, $codAcesso) {
         
     }
 }
