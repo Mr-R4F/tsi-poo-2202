@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="css/styleLogin.css">
         <title>LOGIN</title>
     </head>
     <body>
@@ -23,10 +23,16 @@
                         <label for="sn">Senha</label>
                     </div>
 
-                    <button type="submit" name="login">LOGIN</button>
+                    <div id="form-item">
+                        <div id="form-checkbox">
+                            <input type="checkbox" name="chk" id="chk">
+                            <p>Lembrar senha</p>
+                        </div>
+                        <button type="submit" name="login">LOGIN</button>
+                    </div>
                 </fieldset>
             </form>
-            <p>Possui uma conta ? <a href="registro.php">Cadastre-se</a></p>
+            <p id="txt">Não possui uma conta ? <a href="registro.php">Cadastre-se</a></p>
         </div>
     </body>
 </html>

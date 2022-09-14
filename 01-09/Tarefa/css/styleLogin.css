@@ -2,13 +2,14 @@
 
 :root {
     --transparent: transparent; /* Float */
+    --none: none;
 }
 
 body {
     background: #485563;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-attachment: fixed;    
+    background-attachment: fixed;
 }
 
 * {
@@ -16,12 +17,19 @@ body {
     margin: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    color: #fff;
+}
+
+.container, fieldset, #form-checkbox, #form-item {
+    display: flex;
+}
+
+.container, fieldset, #form-item {
+    align-items: center;
 }
 
 .container, fieldset {
-    display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .container {
@@ -30,11 +38,16 @@ body {
 
 form {
     padding: 15px;
+    margin-bottom: 4%;
 }
 
 /* FORM */
 fieldset {
-    width: 450px;
+    width: 350px;
+    border: 0;
+}
+
+fieldset, button {
     border: 0;
 }
 
@@ -43,37 +56,25 @@ legend {
     font-size: 3em;
 }
 
-button[type=submit] {
-    margin-top: 8%;
-    margin-bottom: 5%;
-    height: 40px;
-    cursor: pointer;
-    font-size: large;
-}
-
-input, legend, p, a {
-    color: #fff;
-}
-
 .float:nth-child(2), .float:nth-child(3) {
     margin-top: 10%;
 }
 
-.float, input, button[type=submit] {
+.float, .float input, #form-item {
     width: 100%;
 }
 
 /* FLOAT */
 .float {
     position: relative;
-    padding-top: 5px;
+    padding-top: 10px;
 }
   
 .float input {
     font-size: larger;
     background-color: var(--transparent);
     height: 35px;
-    outline: none;
+    outline: var(--none);
     border: 0px var(--transparent);
     border-bottom: 1px solid #fff;
     transition: all .2s ease-out;
@@ -87,12 +88,12 @@ input, legend, p, a {
 }
 
 .float label {
-    pointer-events: none;
+    pointer-events: var(--none);
     position: absolute;
     top: 0px;
     left: 0px;
     margin-top: 30px;
-    font-size: x-large;
+    font-size: large;
     transition: all .2s ease-out;
     -webkit-transition: all .1s ease-out;
     -moz-transition: all .1s ease-out;
@@ -111,10 +112,54 @@ input, legend, p, a {
 
 .float input::-webkit-inner-spin-button, 
 .float input::-webkit-outer-spin-button {
-    appearance: none;
-    -webkit-appearance: none;
+    appearance: var(--none);
+    -webkit-appearance: var(--none);
+}
+
+#form-item {
+    justify-content: space-between;
+    margin-top: 12%;
+}
+
+#form-checkbox {
+    width: 60%;
+}
+
+#form-checkbox p {
+    margin-left: 7%;
+}
+
+input[type=checkbox] {
+    height: 15px;
+    width: 15px;
+    accent-color: #485563;
+    background-color: #4855634f;
+    appearance: var(--none);
+    border: 1px solid #fff;
+    border-radius: 3px;
+}
+
+input[type=checkbox]:checked {
+    appearance: auto;
+}
+
+input[type=checkbox], button {
+    cursor: pointer;
+}
+
+button {
+    width: 150px;
+    height: 40px;
+    font-size: large;
+    box-shadow: 0px 0px 36px 2px rgba(0,0,0,0.24);
+    transition: ease-in-out .2s;
+    background-color: #566ed9;
+}
+
+button:hover {
+    transform: scale(1.1);
 }
 
 a {
-    text-decoration: none;
+    text-decoration: var(--none);
 }

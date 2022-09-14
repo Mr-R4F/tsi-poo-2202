@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="css/styleRegistro.css">
         <title>CADASTRO</title>
     </head>
     <body>
@@ -13,19 +13,28 @@
                 <fieldset>
                     <legend>CADASTRO</legend>
                     
-                    <label for="nm">Nome</label>
-                    <input type="text" name="nome" id="nm">
+                    <div class="float">
+                        <input type="text" name="nome" id="nm" placeholder=" " autofocus required>
+                        <label for="nm">Nome</label>
+                    </div>
 
-                    <label for="em">Email</label>
-                    <input type="email" name="email" id="em">
+                    <div class="float">
+                        <input type="email" name="email" id="em" placeholder=" " required>
+                        <label for="em">Email</label>
+                    </div>
 
-                    <label for="tl">Telefone</label>
-                    <input type="tel" name="telefone" id="tl">
+                    <div class="float">
+                        <input type="tel" name="telefone" id="tl" placeholder=" " required>
+                        <label for="tl">Telefone</label>
+                    </div>
 
-                    <button type="submit" name="recebeCod">Receber código</button>
-                    <button type="submit"  name="validaCod">Validar código</button>
+                    <div id="form-btn">
+                        <button type="submit" name="recebeCod">Receber código</button>
+                        <button type="submit"  name="validaCod">Validar código</button>
+                    </div>
                 </fieldset>
             </form>
+            <p id="txt">Possui uma conta ? <a href="login.php">Login</a></p>
         </div>
     </body>
 </html>

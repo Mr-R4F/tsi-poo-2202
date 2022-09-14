@@ -1,19 +1,26 @@
 <?php
 
-class Registro { 
-    public $idCli;
-    public $login;
-    public $email;
-    public $tel;
-    public $validado;
-    public $codAcesso;
-    public $tipo;
+require_once '../config/phpMailer.php';
 
-    public function setUsuario($login, $email, $tel, $tipo) {
+class Registro { 
+    private $idCli;
+    private $login;
+    private $email;
+    private $tel;
+    private $validado;
+    private $codAcesso;
+    private $tipo;
+    private $bd; //banco
+
+    //Conexão do banco
+    public function dbConn($val) {
+        $this->bd = $val;
+    }
+
+    public function setUsuario($login, $email, $tel) {
         $this->login = $login;
         $this->email = $email;
         $this->tel = $tel;
-        $this->tipo = $tipo;
     }
 
     public function setRegistrar() { //enviar o código para o banco e manda o cód para o email
@@ -25,6 +32,10 @@ class Registro {
     }
 
     public function setLogin ($login, $codAcesso) {
-        
+        $stmt = $this->bd->query("SELECT email AND codAcesso FROM usuarios WHERE email = '$login' AND codAcesso = '$codAcesso'");
+        $stmt -> execute();
+        $user = $stmt -> fetchAll();
+        var_dump($user);
+        echo $user === '' ? 'LOGADO COM SUCESSO' : 'USUARIO NÃO EXISTE NA BASE DE DADOS';
     }
 }
