@@ -16,6 +16,5 @@ if (isset($_POST['recebeCod'])) {
 }
 
 if (isset($_POST['validarCod'])) {
-    $val = true;
-    $reg -> setValidar($val);
+    $reg -> setValidar();
 }

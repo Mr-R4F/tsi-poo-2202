@@ -4,12 +4,12 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="css/styleRegistro.css">
+            <link rel="stylesheet" href="../css/styleRegistro.css">
         <title>CADASTRO</title>
     </head>
     <body>
         <div class="container">
-            <form action="config/php/script.php" method="post">
+            <form action="../config/php/script.php" method="post">
                 <fieldset>
                     <legend>CADASTRO</legend>
                     
@@ -30,7 +30,7 @@
 
                     <div id="form-btn">
                         <button type="submit" name="recebeCod">Receber código</button>
-                        <button type="submit"  name="validaCod">Validar código</button>
+                        <button type="submit" name="validaCod" formaction="acesso.php" formnovalidate>Validar código</button>
                     </div>
                 </fieldset>
             </form>

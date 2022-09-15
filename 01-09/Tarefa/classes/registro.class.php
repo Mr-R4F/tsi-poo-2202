@@ -1,11 +1,10 @@
 <?php
-require_once "../config/src/PHPMailer.php";
-require_once "../config/src/SMTP.php";
-require_once "../config/src/Exception.php";
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\SMTP; //para debug apenas
 use PHPMailer\PHPMailer\Exception;
+
+require_once '../../config/vendor/autoload.php';
 
 class Registro { 
     private $login;
@@ -29,7 +28,7 @@ class Registro {
     public function setRegistrar() { //enviar o código para o banco e manda o cód para o email
         $this->codAcesso = '';
 
-        for ($i = 0; $i < 6; $i++) {
+        for ($i = 0; $i < 6; $i++) { //gera código
             $this->codAcesso .= rand(0, 9);
         }
 
@@ -43,7 +42,7 @@ class Registro {
 
         try {
             //Config do servidor
-            $mail -> SMTPDebug = SMTP::DEBUG_SERVER;        
+            //$mail -> SMTPDebug = SMTP::DEBUG_SERVER;        
             $mail -> SMTPOptions = array( //para funcionar o envio e corrigir o erro de servidor não encontrado
                 'ssl' => array(
                 'verify_peer' => false,
@@ -54,34 +53,49 @@ class Registro {
             $mail -> Host = 'smtp.gmail.com'; //Define o servidor SMTP a ser enviado
             $mail -> SMTPAuth = true; // Ativa a autenticação SMTP
             $mail -> Username = 'rtestconta@gmail.com'; //Nome SMTP 
-            $mail -> Password = 'uU{nQZ&{Iiu9x{rz:Z]W'; //Senha SMTP
-            $mail -> SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;  //Enable implicit TLS encryption
+            $mail -> Password = 'rdqeiflpwpwswgcm'; //Senha SMTP
+            $mail -> SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //Enable implicit TLS encryption
             $mail -> Port = 465;
-            $mail -> setFrom("'rtestconta@gmail.com'","'$this->codAcesso'");
-            $mail -> addAddress("'rtestconta@gmail.com'", 'testes2');     //Add a recipient /destino
-            $mail -> isHTML(true);                                  //Set email format to HTML
-            $mail -> Subject = '';
-            $mail -> Body    = ''; //c/ html
+
+            $mail -> setFrom("$this->email", 'teste'); //de
+            $mail -> addAddress("$this->email", 'testes2');//Add a recipient /destino //para
+            $mail -> isHTML(true); //Set email format to HTML
+            $mail -> Subject = 'Senha de acesso';
+            $mail -> Body    = "$this->codAcesso"; //c/ html
             $mail -> AltBody = 'This is the body in plain text for non-HTML mail clients'; //s/ html
+
             $mail -> send(); //cria a msg e envia
             
             echo 'Email enviado com sucesso!';
         } catch (Exception $e) {
             echo 'Houve um erro ao enviar o Email.';
-            $e->getMessage();
+            $e->getMessage($e);
             ($mail -> ErrorInfo);
         }
     }
 
-    public function setValidar($val) {
-        $this->validado = $val;
+    public function setValidar() {
+        $stmt = $this->bd -> query("SELECT codAcesso FROM usuarios WHERE codAcesso = {$_POST['senha']}");
+        $stmt -> execute();
+        $sen = $stmt -> fetchAll();
+
+        if (empty($sen)) {
+            $this->validado = false;
+            $stmt = $this->bd -> query("UPDATE usuarios SET validado = $this->validado WHERE codAcesso = {$_POST['senha']}");
+            $stmt -> execute();
+            echo 'ERRO, O CÓDIGO INFORMADO É INVÁLIDO';
+        } else {
+            echo  'AÇÃO BEM SUCEDIDA, USE ESTE CÓDIGO COMO SENHA DE LOGIN';
+            $this->validado = true;
+            $stmt = $this->bd -> query("UPDATE usuarios SET validado = $this->validado WHERE codAcesso = {$_POST['senha']}");
+            $stmt -> execute();
+        }
     }
 
     public function setLogin ($login, $codAcesso) {
-        $stmt = $this->bd -> query("SELECT email AND codAcesso FROM usuarios WHERE email = '$login' AND codAcesso = '$codAcesso'");
+        $stmt = $this->bd -> query("SELECT email AND codAcesso FROM usuarios WHERE email = '$login' AND codAcesso = '$codAcesso' AND validado = TRUE");
         $stmt -> execute();
         $user = $stmt -> fetchAll();
-        var_dump($user);
-        echo $user === '' ? 'LOGADO COM SUCESSO' : 'USUARIO NÃO EXISTE NA BASE DE DADOS';
+        echo empty($user) ? 'USUARIO NÃO EXISTE NA BASE DE DADOS OU NÃO FOI VALIDADO' : 'LOGADO COM SUCESSO, BEM VINDO! :D';
     }
 }
