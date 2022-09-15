@@ -9,7 +9,7 @@
     </head>
     <body>
         <div class="container">
-            <form action="config/script.php" method="post">
+            <form action="config/php/script.php" method="post">
                 <fieldset>
                     <legend>CADASTRO</legend>
                     

@@ -78,8 +78,6 @@ legend {
     border: 0px var(--transparent);
     border-bottom: 1px solid #fff;
     transition: all .2s ease-out;
-    -webkit-transition: all .2s ease-out;
-    -moz-transition: all .2s ease-out;
     margin-top: 5%;
 }
 
@@ -95,8 +93,6 @@ legend {
     margin-top: 30px;
     font-size: large;
     transition: all .2s ease-out;
-    -webkit-transition: all .1s ease-out;
-    -moz-transition: all .1s ease-out;
     transform: scale(1);
     color: rgba(234, 234, 234, 0.789);
 }
@@ -113,7 +109,6 @@ legend {
 .float input::-webkit-inner-spin-button, 
 .float input::-webkit-outer-spin-button {
     appearance: var(--none);
-    -webkit-appearance: var(--none);
 }
 
 #form-btn {

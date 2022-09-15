@@ -78,9 +78,12 @@ legend {
     border: 0px var(--transparent);
     border-bottom: 1px solid #fff;
     transition: all .2s ease-out;
-    -webkit-transition: all .2s ease-out;
-    -moz-transition: all .2s ease-out;
     margin-top: 5%;
+}
+
+/* Altera o background do autocomplete */
+.float input:-webkit-autofill {
+    box-shadow: 0 0 0 30px #485563 inset;
 }
 
 .float input::placeholder {
@@ -95,8 +98,6 @@ legend {
     margin-top: 30px;
     font-size: large;
     transition: all .2s ease-out;
-    -webkit-transition: all .1s ease-out;
-    -moz-transition: all .1s ease-out;
     transform: scale(1);
     color: rgba(234, 234, 234, 0.789);
 }
@@ -113,7 +114,6 @@ legend {
 .float input::-webkit-inner-spin-button, 
 .float input::-webkit-outer-spin-button {
     appearance: var(--none);
-    -webkit-appearance: var(--none);
 }
 
 #form-item {

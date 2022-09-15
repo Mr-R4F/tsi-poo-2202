@@ -9,7 +9,7 @@
     </head>
     <body>
         <div class="container">
-            <form action="config/script.php" method="post" enctype="multipart/form-data">
+            <form action="config/php/script.php" method="post" enctype="multipart/form-data">
                 <fieldset>
                     <legend>LOGIN</legend>
 
