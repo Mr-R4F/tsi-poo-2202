@@ -12,3 +12,8 @@ no php não é possíve ter 2 classes com 2 mães
 os filhos acessam os atributos da mãe
 encapsulamento proteger a info dentro da classe
 void - quer dizer que a função n faz nd
+
+
+====
+
+CREATE TABLE clientes (idCli INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, nome VARCHAR(30) NOT NULL, celular VARCHAR(12) NOT NULL, sexo VARCHAR(20) NOT NULL, rg VARCHAR(9), cpf VARCHAR(11), email VARCHAR(50) NOT NULL);
