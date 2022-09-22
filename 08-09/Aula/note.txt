@@ -3,10 +3,12 @@ dependendo poo não é a solução
 performarce não utilizar poo
 não é viável a depender da aplicação
 desvantagem
-aproveitar o código da classe que já existe (inherit) cód de uma classe que deseja aproveitar e cria uma nova classe fazendo uma ligação (classe mãe - 'super classe')
+aproveitar o código da classe que já existe (inherit) cód de uma 
+classe que deseja aproveitar e cria uma nova classe fazendo uma ligação 
+(classe mãe - 'super classe')
 classe + específica é a classe filha
 no php não é possíve ter 2 classes com 2 mães
 1 classe e 
 os filhos acessam os atributos da mãe
 encapsulamento proteger a info dentro da classe
-void - quer dizer que a função n
+void - quer dizer que a função n faz nd

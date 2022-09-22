@@ -1,16 +1,16 @@
 <?php
 
-require_once("pessoa.class.php");
+require_once __DIR__ . '/pessoa.class.php';
 
 class Empresa extends Pessoa { //subclasse
     public $razaosocial;
     public $cnpj;
-    public $inscricaoestadual;
+    public $inscricaoEstadual;
 
     function setEmpresa($rs, $cnpj, $ie): void { //void sem retorno
         $this->razaosocial = $rs;
         $this->cnpj = $cnpj;
-        $this->inscricaoestadual = $ie;
+        $this->inscricaoEstadual = $ie;
     }   
 }
 //mysqli serve para conexão em banco de dados (objeto de acesso ao banco de dados)

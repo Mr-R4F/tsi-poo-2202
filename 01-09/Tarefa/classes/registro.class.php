@@ -1,14 +1,10 @@
 <?php
 
-
-require_once '../src/PHPMailer.php';
-require_once '../src/SMTP.php';
-require_once '../src/Exception.php';
-
-// ** Ativacao das classes para uso **
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP; //para debug apenas
 use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP; //deg apenas
+
+require_once '../../config/vendor/autoload.php';
 
 class Registro { 
     private $login;
@@ -36,8 +32,10 @@ class Registro {
             $this->codAcesso .= rand(0, 9);
         }
 
-        $stmt = $this->bd->prepare("INSERT INTO usuarios (login, email, telefone, codAcesso) VALUES (?, ?, ?, $this->codAcesso)");
-        $stmt -> bind_param('sss', $this->login, $this->email, $this->tel);
+        $stmt = $this->bd->prepare("INSERT INTO usuarios (login, email, telefone, codAcesso) VALUES (:login, :email, :telefone, $this->codAcesso)");
+        $stmt -> bindParam(':login', $this->login);
+        $stmt -> bindParam(':email', $this->email);
+        $stmt -> bindParam(':telefone', $this->tel);
         echo $stmt -> execute() ?  'INSERIU' : 'NÃO INSERIU';
     
         $mail = new PHPMailer(true);
@@ -51,12 +49,12 @@ class Registro {
                 'verify_peer_name' => false,
                 'allow_self_signed' => true
             ));
-            $mail -> isSMTP();
-            $mail -> Host = 'smtp.gmail.com';
-            $mail -> SMTPAuth = true;
-            $mail -> Username = 'rtestconta@gmail.com';
-            $mail -> Password = 'rdqeiflpwpwswgcm';
-            $mail -> SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail -> isSMTP(); //envia usando SMTP
+            $mail -> Host = 'smtp.gmail.com'; //Define o servidor SMTP a ser enviado
+            $mail -> SMTPAuth = true; // Ativa a autenticação SMTP
+            $mail -> Username = 'rtestconta@gmail.com'; //Nome SMTP 
+            $mail -> Password = 'rdqeiflpwpwswgcm'; //Senha SMTP
+            $mail -> SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //Enable implicit TLS encryption
             $mail -> Port = 465;
 
             $mail -> setFrom("$this->email", 'teste'); //de
@@ -68,7 +66,7 @@ class Registro {
 
             $mail -> send(); //cria a msg e envia
             
-            echo ' Email enviado com sucesso!';
+            echo 'Email enviado com sucesso!';
         } catch (Exception $e) {
             echo 'Houve um erro ao enviar o Email.';
             $e->getMessage($e);
@@ -78,22 +76,26 @@ class Registro {
 
     public function setValidar() {
         $stmt = $this->bd -> query("SELECT codAcesso FROM usuarios WHERE codAcesso = {$_POST['senha']}");
-        $sen = $stmt -> fetch_All(MYSQLI_ASSOC);
+        $stmt -> execute();
+        $sen = $stmt -> fetchAll();
 
         if (empty($sen)) {
             $this->validado = false;
             $stmt = $this->bd -> query("UPDATE usuarios SET validado = $this->validado WHERE codAcesso = {$_POST['senha']}");
+            $stmt -> execute();
             echo 'ERRO, O CÓDIGO INFORMADO É INVÁLIDO';
         } else {
+            echo  'AÇÃO BEM SUCEDIDA, USE ESTE CÓDIGO COMO SENHA DE LOGIN';
             $this->validado = true;
             $stmt = $this->bd -> query("UPDATE usuarios SET validado = $this->validado WHERE codAcesso = {$_POST['senha']}");
-            echo  'AÇÃO BEM SUCEDIDA, USE ESTE CÓDIGO COMO SENHA DE LOGIN';
+            $stmt -> execute();
         }
     }
 
     public function setLogin ($login, $codAcesso) {
         $stmt = $this->bd -> query("SELECT email AND codAcesso FROM usuarios WHERE email = '$login' AND codAcesso = '$codAcesso' AND validado = TRUE");
-        $user = $stmt -> fetch_All(MYSQLI_ASSOC);
-        echo empty($user) ? 'USUARIO NÃO EXISTE NA BASE DE DADOS OU NÃO FOI VALIDADO' : 'LOGADO COM SUCESSO, BEM VINDO! :D'. header('Location: ../../php/index.php');
+        $stmt -> execute();
+        $user = $stmt -> fetchAll();
+        echo empty($user) ? 'USUARIO NÃO EXISTE NA BASE DE DADOS OU NÃO FOI VALIDADO' : 'LOGADO COM SUCESSO, BEM VINDO! :D';
     }
 }
