@@ -1,0 +1,25 @@
+Diagrama de classes -representa a estrutura de relacionamento
+mostra os objetos e como estão conectados
+diagramas, entidades
+
+classe tipo da classe
++ / - modificadores/ delimitadores de acesso
+
+classes que se relacionar e possuem atributos / métodos
+depende de relacionamento
+uma classe determina
+encpsulamento (restringir o acesso as informações da classe onde não quero que as outras classes vejam)
+
+private (-) - restringe a info da classe mãe e filha 
+public (+) - todas as classes vão 'enxergar' o atributo public
+protected(#) - apenas a classe mãe PODE USAR
+package(~) - todas as classes possuem acesso
+
+herança - compartilha a info nos objetos
+associação - não existe relação de dependencia apenas ASSOCIAÇÃO -> script e instanciar duas classes
+agregagação - classes que se relacionam de alguma forma (existe mais não dependem)(não é obrigatório ter as duas classes)(pode ou não)
+composição - a classe não existe sem a outra (relacionamento FORTE) - produto sem items (produto sem preço) (dependem)
+multiplicidade - 
+
+item 
+regra de necocio requisitos funcionais
