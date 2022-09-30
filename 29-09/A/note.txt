@@ -1,0 +1,28 @@
+construtores e destrutores
+
+objeto na classe 
+atributos na classe sem instancia
+
+necessário objeto
+
+
+new (instancia /copia na memoria) usa função oconstrutor -> permite que o objeto seja instanciado na memoria
+é possível criar vários
+SE NÃO CRIA Automaticamente cria um construtor (cria um construtor vazio) 
+(é a primeira função a ser executada quando inicia a classe
+construtor inicia atributos da classe
+
+necessário atributos
+
+é possível usar void 
+
+unset() ou null tira o objeto na memória, mas ao invez disso criar um destrutor (que é a ultima função a ser executada)
+destroi o código e finaliza o script (quando for tirada da memória)
+
+//cria método que já existe (mesmo noe, sobre carga de método/construtores/operadores) 
+lista de parametros diferentes
+polimorfismo muitas maneiras de fazer algo (muitas formas de fazer algo)
+
+classe abstrata -> classe que nunca vai ser instanciada (as coisas serão desenvolvidas nas classes filhas) (italico -> abstrato) 
+(pode ter o mesmo nome, mas implementações diferentes)
+abstrato, somente classes derivadas terão o código
