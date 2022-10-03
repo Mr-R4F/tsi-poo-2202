@@ -12,7 +12,7 @@ class MediaAritmetica extends Media {
     }
 
     public function mediaAritmetica() {
-        return ($this->nota1 + $this->nota2 / 2);
+        return ($this->nota1 + $this->nota2) / 2;
     }
 
     public function mediaGeometrica() {

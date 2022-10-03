@@ -16,6 +16,6 @@ class MediaGeometrica extends Media {
     }
 
     function mediaAritmetica() {
-        return ($this->nota1 + $this->nota2 / 2);
+        return ($this->nota1 + $this->nota2) / 2;
     }
 }
