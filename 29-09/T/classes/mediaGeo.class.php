@@ -11,10 +11,6 @@ class MediaGeometrica extends Media {
         parent::__construct ($aluno, $nota1, $nota2); 
     }
 
-    function mostrar():void {
-        parent::mostrar();
-    }
-
     function mediaGeometrica() {
         return pow($this->nota1 * $this->nota2, (0.5));
     }
@@ -22,5 +18,4 @@ class MediaGeometrica extends Media {
     function mediaAritmetica() {
         return ($this->nota1 + $this->nota2 / 2);
     }
-
 }

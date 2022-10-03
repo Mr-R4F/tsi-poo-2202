@@ -11,10 +11,6 @@ class MediaAritmetica extends Media {
         parent::__construct ($aluno, $nota1, $nota2); 
     }
 
-    function mostrar():void {
-        parent::mediaAritmetica(); // método não void
-    }
-    
     public function mediaAritmetica() {
         return ($this->nota1 + $this->nota2 / 2);
     }
