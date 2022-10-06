@@ -1,0 +1,28 @@
+manutenção
+
+uma classe se transformar em otura
+
+atributos 
+
+p/ classe abstrata pensar em classe de herança (reuso do código)
+não possui construtor
+
+foi criado de forma abstrada deve ser implementada pela classe derivada
+
+indicar como código vazio
+implementar os métodos
+
+c/ objeto não é possível instancia a classe
+
+classe abastrata pensar nos métodos a serem implementados
+
+interface -> "ponte entre algo e outra" -> padronização necessária para que sistema conversem c/ outro sistema -> CRUD
+
+métodos do crud (padronizar - que for usar vai tende usar os nomes, sõa públicos (métodos), pode conter parametros)
+rel entre classe e interface não é herança
+
+implements -> a classe tal terá os mesmo métodos nda interface
+
+interface - monta uma interface -> usada para 'forçar' um padrão dentro do código (deve usar os MÉTODOS)
+interface não é instanciável
+
