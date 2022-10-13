@@ -1,0 +1,2 @@
+Cliente - id, nome, email, senha
+produtos id, clienteId, nome, qtd
