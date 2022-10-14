@@ -1,0 +1,31 @@
+design de classe
+
+como criar da melhor maneira possivel uma classe dentro do sistema
+
+solid -> acronimo
+normalização n ter dados repetidos nas tabelas
+
+artigos para o desenvolvimento de uma classe 
+acronimo cd letra sifnifica uma coisa
+
+principios da POO
+
+srp - uma classe deve ter uma função especializada (infos pertinentes da tabela) 
+
+seguir o solid padroniza o sistema
+
+resp única
+a violação disto pode causar infos n coesas, 
+alto acoplamento entre classe (dependencia)(deve testar todas)
+dif de reuso
+
+separar (fora do padrão quando está tudo junto)
+separar o máx que puder de funções
+resp única (normalizar)-> duas tabelas com o mesma atributo (evita a duplicação de dados)
+
+não só nas entidades
+
+divisão a função em processos menores que facilite a depuração
+
+produto (catalálogo) -> todas as infos relacionados aos produtos (atributos e classes pertinente a classe)
+estoque qtd -entrou,vendeu , disponivel
