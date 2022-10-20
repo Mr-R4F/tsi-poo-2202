@@ -23,13 +23,14 @@ class Clients implements Itransation {
     }
 
     public function salvarRegistro($sql) {
+        echo $sql;
         $stmt = $this->con -> prepare("$sql");
-        $stmt ->bind_param('sss', '', '', '');
         if ($stmt -> execute()) echo 'Sucesso';
     }
 
     public function excluirRegistro($sql) {
-        echo $sql;
+        $stmt = $this->con -> prepare("$sql");
+        if ($stmt -> execute()) echo 'Sucesso';
     }
 
     public function exibirRegistroGridHtml($sql) {

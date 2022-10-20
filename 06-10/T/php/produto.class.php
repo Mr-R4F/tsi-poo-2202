@@ -22,13 +22,17 @@ class Product implements Itransation {
 
     public function salvarRegistro($sql) {
         echo $sql;
+        $stmt = $this->con -> prepare("$sql");
+        if ($stmt -> execute()) echo 'Sucesso';
     }
 
     public function excluirRegistro($sql) {
-        echo $sql;
+        $stmt = $this->con -> prepare("$sql");
+        if ($stmt -> execute()) echo 'Sucesso';
     }
 
     public function exibirRegistroGridHtml($sql) {
-        echo $sql;
+        $stmt = $this->con -> prepare("$sql");
+        if ($stmt -> execute()) echo 'Sucesso';
     }
 }
