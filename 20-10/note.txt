@@ -1,0 +1,13 @@
+SOLID
+
+SRP
+classe Deus não é especificada
+classe que herda a outra
+
+OCP - Aberto e fechado criar outra classe par não modificar a classe 
+colocou o código mais não modificou  os métodos
+modificar no sentido de modificar no código
+isto é modificar o código sem (estender)
+para não violar (não mexer na classe) criar uma classe que extenda essa classe ou usar uma interface
+
+quando não se pode mexer no código (aplicar este princípio)
