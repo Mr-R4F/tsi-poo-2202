@@ -1,0 +1,46 @@
+namespace -> divida em várias namespece ->
+design pattern
+
+prova dia 17/10
+
+SOLID -: SRP -> ao ter uma classe separar em classes onde cada uma tem a sua funcionalidade
+nenhuma classe pode ser a classe Deus
+
+//modificar mais sem mecher no código do cliente
+criar uma classe própria para uso
+
+LSP - liskov 
+uma classe derivada deve ser substituivel por uma classe base (principoios)
+instancia
+o sistema pode ser substituido por outro tipos
+
+deve estar na hierarquia
+
+//ao definir as filhas
+
+
+//ao subescrever um método ou implementando um método desrespeita o principo de liskov
+
+quando meche na classe base
+subescrever método polimorfismo
+gera exeção automatica
+sem tratamento
+
+//ao subescrever deve ter retorno
+
+void -> sem retorno vazio
+quando não igual possui funcionalidades diferentes resultado em erros na aplicação
+
+respeitar o retorno do método
+
+não subescrever um método que não faz nada
+
+pode substituir métodos por outro desde que tenha avós / avôs
+
+poligono regular (não são da mesma especie) quadrado e retângulo
+implementa
+como projetar uma hierarquia corretamente
+
+são poligonos diferentes
+
+subescrido pode ter a mesma assinatura
