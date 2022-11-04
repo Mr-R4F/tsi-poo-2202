@@ -1,0 +1,27 @@
+S - > uma classe deve ter um, e somente um motivo para mudar
+separar uma funcionalidade de uma class (evitar o conceito da God Class
+
+ocp - proteção
+criar uma classe para motificar a classe pai ()
+
+LSP ->uma classe derivada deve ser substituido por sua classe base
+
+abstrato foi feito mas não possui nada dentro
+2 metodos c/ o mesmo nome e mesma hierarquia
+
+
+e como não viola o LSP ->
+EXECPTION- tratamento de erro 
+
+minimo de váriáveis globais é uma boa prática
+
+segregação da interface ->padroniza o cód
+
+mesmo método memo retorno]
+todos os métodos da interface é necessário implementar
+métodos não podem ser vazios
+
+ISP -> interface segregation principle -> uma interface não usar todos os métodos, assim criar uma nova interface para usar métodos especificos (assim evitar usar métodos desnecesários)
+interface derivada
+Colcoar oque for o mais generico possivek
+pode copiar mais não mudar 
