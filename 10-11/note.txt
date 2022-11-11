@@ -1,0 +1,19 @@
+DIP -> depende de abstrações e não de implementações
+
+um modulo de alto nivel não deve depender de um modulo
+
+a classe depende + da outra (filha por exemplo, pois depende da mãe)
+não mexer recorre a abstração
+não deve depender dos detalhes
+
+inversão de dependencia ->
+injeção de dependencia -> procedimento que faz dentro da classe
+atuo acoplameto e dependencia -> quando uma classe depende da outra
+
+não consegue executar se não houver instancia (pois uma depende da outra)
+
+injeção de dependencia -> mando o objeto instanciado fora da classe
+
+baixo nivel não depende tanto da outra já o de alto nível depende
+vai ser implementado no bd especifico
+traz uma classe acopla
