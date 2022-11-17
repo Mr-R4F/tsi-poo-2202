@@ -50,6 +50,57 @@ acrônimo SOLID explicados e praticados nas últimas semanas. Use as suas
 palavras, fique a vontade para colocar pequenos exemplos de código, assim seu
 estudo ficará completo.
 
+S.O.L.I.D: Os 5 princípios da POO
+S — Single Responsibility Principle (Princípio da responsabilidade única)
+O — Open-Closed Principle (Princípio Aberto-Fechado)
+L — Liskov Substitution Principle (Princípio da substituição de Liskov)
+I — Interface Segregation Principle (Princípio da Segregação da Interface)
+D — Dependency Inversion Principle (Princípio da inversão da dependência)
+
+SRP 
+Princípio da Responsabilidade Única — Uma classe deve ter um, e somente um,
+motivo para mudar.
+Esse princípio declara que uma classe deve ser especializada em um único assunto e
+possuir apenas uma responsabilidade dentro do software, ou seja, a classe deve ter uma
+única tarefa ou ação para executar. Necessário evitar o conceito de "God Class", que são
+classes que fazem tudo no sistema.
+
+OCP 
+
+Princípio Aberto-Fechado — Objetos ou entidades devem estar abertos para
+extensão, mas fechados para modificação, ou seja, quando novos comportamentos e
+recursos precisam ser adicionados no software, devemos estender e não alterar o código fonte
+original.
+Esse princípio declara que uma classe não deverá permitir inclusão de novos códigos
+ou novos métodos, procurando sempre uma solução de extensão, tal como a criação de
+classes abstratas ou interfaces de modo a tornar o código mais simples e inteligente.
+
+LSP
+
+Este princípio decorre do fato de que "Uma classe derivada deve ser
+substituível por sua classe base". A ideia deste princípio foi introduzida por Barbara
+Liskov em sua conferência “Data abstraction” em 1987.
+A definição formal de Liskov diz que: Se para cada objeto O1 do tipo S há um objeto
+O2 do tipo T de forma que, para todos os programas P definidos em termos de T, o
+comportamento de P é inalterado quando O1 é substituído por O2 então S é um subtipo de
+T.
+
+ISP 
+
+Princípio da Segregação da Interface — Uma classe não deve ser forçada a
+implementar interfaces e métodos que não irão utilizar.
+
+Esse princípio basicamente diz que é melhor criar interfaces mais específicas ao invés
+de termos uma única interface genérica, caso seja necessário o melhor a fazer seria criar
+várias interfaces.
+
+
+
+
+
+
+
+
 6. Qual a diferença e para que servem os diagramas: Diagrama de Classes e
 Diagrama de Use-case
 
