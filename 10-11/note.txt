@@ -17,3 +17,61 @@ injeção de dependencia -> mando o objeto instanciado fora da classe
 baixo nivel não depende tanto da outra já o de alto nível depende
 vai ser implementado no bd especifico
 traz uma classe acopla
+
+
+Questões usadas para estudo do conteúdo obrigatório da prova
+
+1. O que você entende por Classe, Atributos e Métodos, responda e dê um exemplo código de uma classe em PHP
+	Uma classe é uma forma de definir um tipo de dado em uma linguagem orientada a objeto. Ela é formada por dados e comportamentos.
+Para definir os dados são utilizados os atributos (variáveis), e para definir o comportamento são utilizados métodos (funções, define determinado comportamento na aplicação).
+
+As classes ajudam a definir um objeto e seu comportamento
+====================
+
+2. O que você entende por Interface, responda e dê um exemplo código prático em
+PHP
+Podemos definir como interface o contrato entre a classe e o mundo exterior. Quando uma classe implementa uma interface, se compromete a fornecer o comportamento publicado por esta interface. As  interfaces auxiliam na definição dessas classes. As interfaces são formadas pela declaração de um ou mais métodos, os quais obrigatoriamente não possuem corpo.
+
+Quando duas (ou mais) classes possuem comportamentos comuns que podem ser separados em uma outra classe, dizemos que a "classe comum" é uma interface, que pode ser "herdada" pelas outras classes. Note que colocamos a interface como "classe comum", que pode ser "herdada" (com aspas), porque uma interface não é exatamente um classe, mas sim um conjunto de métodos que todas as classes que herdarem dela devem possuir (implementar) - portanto, uma interface não é "herdada" por uma classe, mas sim implementada. No mundo do desenvolvimento de software, dizemos que uma interface é um "contrato": uma classe que implementa uma interface deve fornecer uma implementação a todos os métodos que a interface define, e em compensação, a classe implementadora pode dizer que ela é do tipo da interface. No nosso exemplo, "carro" e "motocicleta" são classes que implementam os métodos da interface "automóvel", logo podemos dizer que qualquer objeto dessas duas primeiras classes, como um Honda Fit ou uma motocicleta da Yamaha, são automóveis.
+
+
+============
+
+3. Explique o que você sabe de Classe Abstrata, dê um exemplo de código prático
+usando classe abstrata em PHP
+É um tipo de classe especial que não pode ser instanciada, apenas herdada. Sendo assim, uma classe abstrata não pode ter um objeto criado a partir de sua instanciação. Essas classes são muito importantes quando não queremos criar um objeto a partir de uma classe “geral”, apenas de suas “subclasses”.
+
+4. Qual a diferença entre um método com retorno void e uma função no PHP ?
+Responda e dê um exemplo prático de código em PHP.
+Quando usado como um tipo de retorno da função, a palavra-chave void especifica que a função não retorna um valor. já uma função retorno um valor
+
+5. Explique com suas palavras cada um dos 5 conceitos de Design Pattern referente ao
+acrônimo SOLID explicados e praticados nas últimas semanas. Use as suas
+palavras, fique a vontade para colocar pequenos exemplos de código, assim seu
+estudo ficará completo.
+
+6. Qual a diferença e para que servem os diagramas: Diagrama de Classes e
+Diagrama de Use-case
+
+Na Linguagem de modelagem unificada (UML), o diagrama de caso de uso resume os detalhes dos usuários do seu sistema (também conhecidos como atores) e as interações deles com o sistema.
+
+Diagramas de classes estão entre os tipos mais úteis de diagramas UML pois mapeiam de forma clara a estrutura de um determinado sistema ao modelar suas classes, seus atributos, operações e relações entre objetos.
+
+==========
+
+7. O que você entende por Polimorfismo? Explique e dê exemplos em PHP.
+Dizemos que o método "tocar música" é uma forma de polimorfismo, pois dois objetos, de duas classes diferentes, têm um mesmo método que é implementado de formas diferentes, ou seja, um método possui várias formas, várias implementações diferentes em classes diferentes, mas que possuem o mesmo efeito ("polimorfismo" vem do grego poli = muitas, morphos = forma).
+
+8. O que você entende por herança ? Explique e dê um exemplo em PHP.
+Quando dizemos que uma classe A é um tipo de classe B, dizemos que a classe A herda as características da classe B e que a classe B é mãe da classe A, estabelecendo então uma relação de herança entre elas. (comportamentos e caracteristicas da classe abstratas são 'transportados' para a classe concreta)
+
+9. Quanto ao relacionamento entre classes dentro de um projeto em POO, explique a
+diferença entre: Composição, Agregação.
+
+Toda vez que temos composição, significa que a parte não existe sem o todo.
+
+Toda vez que temos agregação, significa que a parte pode ser compartilhada entre vários objetos.
+
+10. Qual a diferença entre inversão de dependência e injeção de dependencia? Explique
+e dê exemplos em php.
+A Injeção de Dependência apenas injeta a dependência de uma classe para outra classe. A Inversão de controle deixa de ter a dependência internamente da classe e passa para uma classe externa!

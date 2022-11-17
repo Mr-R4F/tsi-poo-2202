@@ -84,8 +84,8 @@ if (isset($_POST['circ'])) {
 
                 <input type="text" name="#" value="<?php  echo $obj instanceof Triangulo ? $obj->mostrarArea($obj) : ''; ?>" disabled><br>
 
-                <span>Triângulo</span>
-                <label for="cir">Círculo</label>
+                <span>Círculo</span>
+                <label for="cir">Raio</label>
                 <input type="text" name="raio" id="cirR" value="<?php echo isset($raio) ? $raio : ''?>">
 
                 <input type="text" name="#" value="<?php  echo $obj instanceof Circulo ? $obj->mostrarArea($obj) : ''; ?>" disabled><br>
